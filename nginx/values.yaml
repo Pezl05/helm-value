@@ -1,0 +1,20 @@
+replicaCount: 1
+appName: nginx-se
+
+image:
+  repository: harbor.pezl.local/app-test1/app1/nginx
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 30080
+
+registry:
+  name: harbor
+  secret: ewogICJhdXRocyI6IHsKICAgICJoYXJib3IucGV6bC5sb2NhbCI6IHsKICAgICAgImF1dGgiOiAiWVdSdGFXNDZTR0Z5WW05eU1USXpORFU9IgogICAgfQogIH0KfQ==
+
+env:
+  name: nginx-helm
